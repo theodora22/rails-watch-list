@@ -1,0 +1,15 @@
+<div class="container mt-4">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h1>Watch Lists</h1>
+    <%= link_to "New List", new_list_path, class: "btn btn-primary" %>
+  </div>
+
+  <% @lists.each do |list| %>
+    <div class="card mb-3">
+      <div class="card-body">
+        <%= link_to list.name, list_path(list), class: "card-title h5" %>
+        <p class="card-text text-muted"><%= list.movies.count %> movies</p>
+      </div>
+    </div>
+  <% end %>
+</div>
